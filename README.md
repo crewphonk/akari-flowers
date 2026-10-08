@@ -43,6 +43,7 @@ Para montar uma cena no jardim com personagem e balão de fala, use:
 ```
 
 A cena reutiliza o jardim em pixel art. O personagem e o balão ficam estáticos; as nuvens se movem.
+Para uma cena com o casal, adicione "couple": true ao objeto: os personagens ficam juntos e corações em pixel art flutuam ao redor deles, respeitando a pausa e a preferência por movimento reduzido.
 
 Formatos aceitos: PNG, JPEG, WebP e GIF. As imagens aparecem inteiras, sem cortes.
 Enquanto a lista está vazia, o carrossel mostra três espaços de preparação.

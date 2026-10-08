@@ -171,3 +171,22 @@
 .carousel-slides:has(.has-scene)+.carousel-controls{padding-top:20px;border-top:2px solid var(--ink)}
 @media(max-width:540px){.carousel-dots{gap:4px}.carousel-dot{min-width:28px}.carousel-art.has-scene{aspect-ratio:auto;display:block}.story-garden{height:auto;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:26px;padding:15px 14px 20px}.story-character{position:relative;left:auto;bottom:auto;width:64%;height:auto;flex-shrink:0;order:1}.story-dialogue{position:relative;top:auto;left:auto;right:auto;width:100%;padding:13px 14px;font-size:23px;line-height:1.3;box-shadow:4px 4px 0 #88aa80}.story-dialogue:after{left:24px;bottom:-13px;border-left:0;border-right:3px solid var(--ink)}.story-terrain{max-height:58%}.story-cloud-one{top:51%;left:7%}.story-cloud-two{top:61%;left:65%}.story-sun{right:10%;top:52%;width:24px;height:24px}}
 @media(max-width:360px){.story-dialogue{font-size:22px;padding:11px 12px}}
+
+/* The final scene keeps the couple together, surrounded by pixel hearts. */
+.story-couple{position:absolute;z-index:2;left:3%;bottom:7%;width:46%}
+.story-couple .story-character{position:static;display:block;width:100%;height:auto;object-fit:contain}
+.with-couple .story-dialogue{font-size:25px;line-height:1.3;padding:16px 18px}
+.couple-heart{position:absolute;z-index:3;display:block;width:19px;height:19px;background:#df627d;clip-path:polygon(0 20%,20% 20%,20% 0,40% 0,40% 20%,60% 20%,60% 0,80% 0,80% 20%,100% 20%,100% 60%,80% 60%,80% 80%,60% 80%,60% 100%,40% 100%,40% 80%,20% 80%,20% 60%,0 60%);animation:couple-heart-float 3.4s steps(5,end) infinite;pointer-events:none}
+.couple-heart-1{left:4%;top:7%}
+.couple-heart-2{left:33%;top:-8%;width:15px;height:15px;animation-delay:-1.3s}
+.couple-heart-3{right:16%;top:-6%;animation-delay:-2.1s}
+.couple-heart-4{right:0;top:25%;width:14px;height:14px;animation-delay:-.6s}
+.couple-heart-5{right:0;top:62%;animation-delay:-2.6s}
+.couple-heart-6{left:3%;top:59%;width:15px;height:15px;animation-delay:-1.8s}
+.couple-heart-7{left:47%;bottom:3%;width:13px;height:13px;animation-delay:-.8s}
+.couple-heart-8{left:0;top:35%;width:12px;height:12px;animation-delay:-2.9s}
+@keyframes couple-heart-float{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(-6px);opacity:.7}}
+@media(max-width:850px){.carousel-art:has(.with-couple){aspect-ratio:auto;display:block}.with-couple{height:auto;min-height:480px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:15px 14px 25px}.with-couple .story-dialogue{position:relative;top:auto;left:auto;right:auto;width:100%}.with-couple .story-dialogue:after{left:24px;bottom:-13px;border-left:0;border-right:3px solid var(--ink)}.story-couple{position:relative;left:auto;bottom:auto;width:94%;order:1;flex-shrink:0;margin-top:22px}.story-couple .story-character{width:100%;height:auto}.with-couple .story-dialogue{font-size:23px;padding:13px 14px}.with-couple{gap:20px;padding-bottom:25px}}
+@media(max-width:360px){.with-couple .story-dialogue{font-size:22px;padding:11px 12px}}
+
+@media(max-width:540px){.carousel-controls{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:8px}.carousel-dots{max-width:none;flex-wrap:nowrap;gap:2px}.carousel-dot{min-width:0;padding:4px;flex:1}}

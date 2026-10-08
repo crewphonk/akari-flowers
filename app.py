@@ -42,14 +42,25 @@ def build_slides() -> str:
             if slide.get("type") == "garden":
                 dialogue = escape(slide["dialogue"])
                 terrain = data_uri(ASSETS / "kooizy-garden.png", "image/png")
+                character = (
+                    f'<img class="story-character" src="{data_uri(image_path, media_type)}" '
+                    f'alt="{alt}" loading="lazy">'
+                )
+                garden_class = ""
+                if slide.get("couple"):
+                    garden_class = " with-couple"
+                    hearts = "".join(
+                        f'<span class="couple-heart couple-heart-{i}" aria-hidden="true"></span>'
+                        for i in range(1, 9)
+                    )
+                    character = f'<div class="story-couple">{character}{hearts}</div>'
                 content = (
-                    '<div class="story-garden">'
+                    f'<div class="story-garden{garden_class}">'
                     '<div class="sky-cloud story-cloud-one" aria-hidden="true"></div>'
                     '<div class="sky-cloud story-cloud-two" aria-hidden="true"></div>'
                     '<div class="pixel-sun story-sun" aria-hidden="true"></div>'
                     f'<img class="garden-terrain story-terrain" src="{terrain}" alt="" aria-hidden="true">'
-                    f'<img class="story-character" src="{data_uri(image_path, media_type)}" '
-                    f'alt="{alt}" loading="lazy">'
+                    f'{character}'
                     f'<p class="story-dialogue">{dialogue}</p></div>'
                 )
             else:

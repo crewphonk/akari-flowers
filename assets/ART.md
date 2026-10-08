@@ -61,3 +61,9 @@ A cena reutiliza assets/kooizy-garden.png e mantém a fala como texto HTML.
 Arquivo final: assets/story/allan-03.png.
 Imagem fornecida pelo usuário e copiada sem alterações, preservando a pose, os corações e o fundo transparente original.
 A cena reutiliza assets/kooizy-garden.png e mantém a fala como texto HTML.
+
+## Quarta cena do carrossel — Allan e Kooizy
+
+Arquivo final: assets/story/casal-04.png.
+Imagem fornecida pelo usuário e copiada sem alterações, preservando o casal, a plantinha e o fundo transparente original.
+A cena reutiliza assets/kooizy-garden.png. Oito corações em pixel art são desenhados e animados por CSS ao redor do casal, sem alterar a imagem.
