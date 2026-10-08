@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "type": "garden",
+    "image": "allan-01.png",
+    "alt": "Personagem de boné, barba, camiseta preta e jeans, com uma mão atrás da cabeça e expressão tímida.",
+    "dialogue": "Oi vida, sou eu aqui... Eu sei que erro e que às vezes as coisas saem do controle..."
+  }
+]

@@ -39,16 +39,32 @@ def build_slides() -> str:
             if media_type not in {"image/png", "image/jpeg", "image/webp", "image/gif"}:
                 raise ValueError("Unsupported story image format.")
             alt = escape(slide.get("alt", f"Imagem {number} da história"), quote=True)
-            content = (
-                f'<img class="carousel-image" src="{data_uri(image_path, media_type)}" '
-                f'alt="{alt}" loading="lazy">'
-            )
+            if slide.get("type") == "garden":
+                dialogue = escape(slide["dialogue"])
+                terrain = data_uri(ASSETS / "kooizy-garden.png", "image/png")
+                content = (
+                    '<div class="story-garden">'
+                    '<div class="sky-cloud story-cloud-one" aria-hidden="true"></div>'
+                    '<div class="sky-cloud story-cloud-two" aria-hidden="true"></div>'
+                    '<div class="pixel-sun story-sun" aria-hidden="true"></div>'
+                    f'<img class="garden-terrain story-terrain" src="{terrain}" alt="" aria-hidden="true">'
+                    f'<img class="story-character" src="{data_uri(image_path, media_type)}" '
+                    f'alt="{alt}" loading="lazy">'
+                    f'<p class="story-dialogue">{dialogue}</p></div>'
+                )
+            else:
+                content = (
+                    f'<img class="carousel-image" src="{data_uri(image_path, media_type)}" '
+                    f'alt="{alt}" loading="lazy">'
+                )
             caption = slide.get("caption", "")
+        scene_class = " has-scene" if slide.get("type") == "garden" else ""
+        caption_html = f'<figcaption>{escape(caption)}</figcaption>' if caption else ""
         rendered.append(
             f'<figure class="carousel-slide" role="group" aria-roledescription="imagem" '
             f'aria-label="{index + 1} de {len(slides)}"{hidden}>'
-            f'<div class="carousel-art">{content}</div>'
-            f'<figcaption>{escape(caption)}</figcaption></figure>'
+            f'<div class="carousel-art{scene_class}">{content}</div>'
+            f'{caption_html}</figure>'
         )
     return "".join(rendered)
 

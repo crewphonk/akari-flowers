@@ -36,6 +36,14 @@ A ordem e os textos são definidos em assets/story/slides.json:
 ]
 ```
 
+Para montar uma cena no jardim com personagem e balão de fala, use:
+
+```json
+{"type": "garden", "image": "allan-01.png", "alt": "Descrição do personagem", "dialogue": "Fala da cena."}
+```
+
+A cena reutiliza o jardim em pixel art. O personagem e o balão ficam estáticos; as nuvens se movem.
+
 Formatos aceitos: PNG, JPEG, WebP e GIF. As imagens aparecem inteiras, sem cortes.
 Enquanto a lista está vazia, o carrossel mostra três espaços de preparação.
 A navegação é manual e circular, sem avanço automático, para permitir a leitura da história.

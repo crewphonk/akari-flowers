@@ -39,3 +39,13 @@ Use case: background-extraction. Image 1 is the edit target supplied by the user
 Arquivo final: assets/docinho-surpresa.png.
 Imagem fornecida pelo usuário e copiada sem alterações, preservando o fundo transparente original.
 As classes e animações do capítulo 03 permanecem as mesmas.
+
+## Primeira cena do carrossel — personagem do Allan
+
+Arquivo final: assets/story/allan-01.png.
+Personagem fornecido pelo usuário, com fundo removido por image_gen no modo built-in.
+A cena reutiliza assets/kooizy-garden.png. A fala é texto HTML, preservado literalmente; o personagem permanece estático.
+
+### Prompt final da edição
+
+Use case: background-extraction. Image 1 is the edit target supplied by the user: a full-body chibi pixel-art man with brown eyes, dark beard and hair, black-and-white trucker cap, black T-shirt, blue jeans and brown boots, one hand behind his head and one hand in his pocket, with an apologetic shy expression. Remove ONLY the solid black exterior background and replace it with genuine transparent alpha. Preserve the original character exactly: face, identity, expression, posture, hands, beard, cap, clothes, boots, color palette, pixel clusters, contours, full-body proportions, framing and composition. Do not redraw, redesign, smooth, simplify, change his pose, crop, add objects, text, scenery or shadow. Keep the crisp pixel-art edges. Return the same supplied character as an isolated transparent PNG to place over an existing pixel garden scene.
