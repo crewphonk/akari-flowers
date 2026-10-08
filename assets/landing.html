@@ -1,12 +1,112 @@
-<main class="akari-page" lang="pt-BR">
-  <header class="akari-header">
-    <span class="akari-brand">Akari Flower's</span>
-    <span class="akari-status">Em breve</span>
+<main id="kooizy-page" class="kooizy" lang="pt-BR">
+  <header class="kooizy-nav">
+    <a class="brand" href="#kooizy-top" aria-label="Kooizy, início">kooizy<span class="brand-star" aria-hidden="true">✦</span></a>
+    <nav aria-label="Navegação principal">
+      <a href="#kooizy-story">Minha história</a>
+      <a href="#kooizy-video">O filme</a>
+    </nav>
+    <button class="motion-toggle" type="button" aria-pressed="false">Pausar movimentos</button>
   </header>
-  <section class="akari-hero" aria-labelledby="akari-title">
-    <p class="akari-eyebrow">Akari Flower's</p>
-    <h1 id="akari-title" class="akari-title">Um novo capítulo<br>está florescendo.</h1>
-    <p class="akari-description">Estamos preparando nosso novo espaço. Em breve, você poderá conhecer a Akari Flower's por aqui.</p>
+
+  <section class="hero" id="kooizy-top" aria-labelledby="kooizy-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="tiny-square" aria-hidden="true"></span> Uma história da Kooizy</p>
+      <h1 id="kooizy-title">Pequena<br>planta.<br><span>Grande<br>história.</span></h1>
+      <p class="hero-description">Oi! Sou uma suculenta.<br>Pequena no tamanho, cheia de vida.<br>Vem conhecer o meu mundo?</p>
+      <a class="pixel-button" href="#kooizy-story">Conhecer minha história</a>
+      <p class="hero-footnote">Uma folhinha de cada vez.</p>
+    </div>
+    <div class="hero-world">
+      <div class="scene-label"><span>MEU PEQUENO MUNDO</span><span aria-hidden="true">01 / 03</span></div>
+      <div class="garden-scene">
+        <div class="sky-cloud cloud-one" aria-hidden="true"></div>
+        <div class="sky-cloud cloud-two" aria-hidden="true"></div>
+        <div class="pixel-sun" aria-hidden="true"></div>
+        <div class="night-stars" aria-hidden="true">✦<span>✦</span><span>✦</span></div>
+        <p class="speech-bubble">Oi, você!<span aria-hidden="true"> ♥</span></p>
+        <button class="plant-touch" type="button" aria-label="Dar carinho à suculenta">
+          <img class="plant-sprite" src="__PLANT_IMAGE__" alt="Suculenta verde em vaso de terracota sorridente, desenhada em pixel art." fetchpriority="high">
+        </button>
+        <div class="heart-particles" aria-hidden="true"></div>
+        <div class="garden-ground" aria-hidden="true"></div>
+      </div>
+      <div class="scene-controls">
+        <button class="day-toggle pixel-small" type="button" aria-pressed="false">Virar noite</button>
+        <button class="love-button pixel-small" type="button">Dar carinho <span aria-hidden="true">♥</span></button>
+      </div>
+      <p class="love-status" role="status" aria-live="polite">Um pouquinho de carinho muda o dia.</p>
+    </div>
   </section>
-  <footer class="akari-footer">Akari Flower's</footer>
+
+  <div class="story-ribbon" aria-hidden="true"><span>PEQUENOS COMEÇOS</span><b>✦</b><span>NOVAS FOLHAS</span><b>✦</b><span>GRANDES AFETOS</span><b>✦</b><span>PEQUENOS COMEÇOS</span></div>
+
+  <section class="story-section" id="kooizy-story" aria-labelledby="story-title">
+    <div class="section-heading">
+      <p class="eyebrow">Todo começo cabe em um vasinho</p>
+      <h2 id="story-title">Prazer, eu sou<br>a sua nova companhia.</h2>
+      <p>Esta é a minha história. E talvez o começo da nossa.</p>
+    </div>
+
+    <article class="chapter chapter-one" data-chapter="1">
+      <div class="chapter-art art-one">
+        <div class="art-checker" aria-hidden="true"></div>
+        <span class="art-caption">ERA UMA VEZ...</span>
+        <img class="chapter-plant small-plant" src="__PLANT_IMAGE__" alt="A pequena suculenta no começo de sua história." loading="lazy">
+        <span class="pixel-spark spark-one" aria-hidden="true">✦</span>
+        <span class="pixel-spark spark-two" aria-hidden="true">✦</span>
+      </div>
+      <div class="chapter-copy">
+        <span class="chapter-number">CAPÍTULO 01</span>
+        <h3>Eu comecei<br>bem pequenininha.</h3>
+        <p>Um vasinho, algumas folhas e um mundo inteiro para descobrir. No começo, eu só sabia uma coisa: queria crescer.</p>
+        <div class="chapter-tag"><span aria-hidden="true">[ + ]</span> Todo começo tem sua beleza.</div>
+      </div>
+    </article>
+
+    <article class="chapter chapter-two" data-chapter="2">
+      <div class="chapter-art art-two">
+        <div class="pixel-sun small-sun" aria-hidden="true"></div>
+        <span class="art-caption">NO MEU TEMPO.</span>
+        <img class="chapter-plant growing-plant" src="__PLANT_IMAGE__" alt="A suculenta crescendo, com suas folhas verdes." loading="lazy">
+        <span class="pixel-spark spark-one" aria-hidden="true">✦</span>
+        <span class="pixel-spark spark-two" aria-hidden="true">✦</span>
+      </div>
+      <div class="chapter-copy">
+        <span class="chapter-number">CAPÍTULO 02</span>
+        <h3>Crescer também<br>é saber esperar.</h3>
+        <p>Os dias foram passando. Ganhei novas folhas, criei raízes e descobri que as pequenas mudanças fazem uma grande história.</p>
+        <div class="chapter-tag"><span aria-hidden="true">[ ~ ]</span> Sem pressa. Uma folha de cada vez.</div>
+      </div>
+    </article>
+
+    <article class="chapter chapter-three" data-chapter="3">
+      <div class="chapter-art art-three">
+        <span class="art-caption">UM LUGAR PRA CHAMAR DE LAR.</span>
+        <img class="chapter-plant happy-plant" src="__PLANT_IMAGE__" alt="A suculenta feliz, pronta para fazer parte de um novo lar." loading="lazy">
+        <span class="pixel-spark spark-one heart-spark" aria-hidden="true">♥</span>
+        <span class="pixel-spark spark-two heart-spark" aria-hidden="true">♥</span>
+      </div>
+      <div class="chapter-copy">
+        <span class="chapter-number">CAPÍTULO 03</span>
+        <h3>Agora, falta<br>conhecer você.</h3>
+        <p>Quero fazer parte dos seus dias. No cantinho da janela, na mesa de trabalho ou naquele lugar que merece um pouco mais de verde.</p>
+        <div class="chapter-tag"><span aria-hidden="true">[ ♥ ]</span> Pequena presença. Grande companhia.</div>
+      </div>
+    </article>
+    <div class="story-progress" aria-label="Capítulo atual da história"><span class="progress-label">NOSSA HISTÓRIA</span><span class="progress-track"><i></i><i></i><i></i></span><span class="progress-count">01 / 03</span></div>
+  </section>
+
+  <section class="video-section" id="kooizy-video" aria-labelledby="video-title">
+    <p class="eyebrow">A história continua</p>
+    <h2 id="video-title">Agora, aperte<br>o sentimento.</h2>
+    <p class="video-intro">Cada folhinha tem uma história para contar.</p>
+    <div class="video-frame">
+      <div class="video-topbar"><span>KOOIZY_FILME</span><span aria-hidden="true">■ ■ ■</span></div>
+      __VIDEO_CONTENT__
+      <div class="video-bottom"><span>UMA PEQUENA GRANDE HISTÓRIA</span><span aria-hidden="true">♥</span></div>
+    </div>
+    <p class="video-note">Nosso filme chega em breve. Enquanto isso, eu fico aqui crescendo.</p>
+  </section>
+
+  <footer class="kooizy-footer"><a class="brand" href="#kooizy-top">kooizy<span class="brand-star" aria-hidden="true">✦</span></a><p>Pequenas plantas. Histórias que ficam.</p><span class="footer-credit">Akari Flower's</span></footer>
 </main>
