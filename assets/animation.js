@@ -5,7 +5,7 @@
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let paused = reducedMotion.matches;
   let affection = 0;
-  let reactionTimer;
+
   const motionButton = root.querySelector(".motion-toggle");
   const setPaused = () => {
     root.classList.toggle("is-paused", paused);
@@ -34,21 +34,24 @@
     root.querySelector(".love-status").textContent = messages[Math.min(affection - 1, messages.length - 1)];
     const container = root.querySelector(".heart-particles");
     if (paused || reducedMotion.matches) return;
-    const character = root.querySelector(".character-reaction");
-    if (character) {
-      window.clearTimeout(reactionTimer);
-      character.classList.remove("is-loved");
-      void character.offsetWidth;
-      character.classList.add("is-loved");
-      reactionTimer = window.setTimeout(() => character.classList.remove("is-loved"), 850);
-    }
+    const sprite = root.querySelector(".kooizy-character");
+    if (!sprite || !sprite.naturalWidth) return;
+    const sceneBounds = container.getBoundingClientRect();
+    const spriteBounds = sprite.getBoundingClientRect();
+    const scale = Math.min(spriteBounds.width / sprite.naturalWidth, spriteBounds.height / sprite.naturalHeight);
+    const renderedHeight = sprite.naturalHeight * scale;
+    // The pot's succulent is at 41% of the supplied sprite's height.
+    // object-position is center bottom, including on narrow screens.
+    const originX = spriteBounds.left - sceneBounds.left + spriteBounds.width / 2;
+    const originY = spriteBounds.bottom - sceneBounds.top - renderedHeight * .59;
     if (container.childElementCount >= 15) return;
     for (let i = 0; i < 3; i += 1) {
       const heart = document.createElement("span");
       heart.className = "love-particle";
-      heart.textContent = "♥";
-      heart.style.left = (42 + Math.random() * 15) + "%";
-      heart.style.setProperty("--drift", (Math.random() * 70 - 35) + "px");
+      heart.setAttribute("aria-hidden", "true");
+      heart.style.left = (originX + Math.random() * 10 - 5) + "px";
+      heart.style.top = originY + "px";
+      heart.style.setProperty("--drift", (Math.random() * 38 - 19) + "px");
       heart.style.animationDelay = (i * .12) + "s";
       container.appendChild(heart);
       window.setTimeout(() => heart.remove(), 2200);

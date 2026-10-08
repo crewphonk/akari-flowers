@@ -18,6 +18,7 @@ def build_page() -> str:
     html = (ASSETS / "landing.html").read_text(encoding="utf-8")
     html = html.replace("__PLANT_IMAGE__", data_uri(ASSETS / "kooizy-succulent.png", "image/png"))
     html = html.replace("__HERO_CHARACTER__", data_uri(ASSETS / "kooizy-character.png", "image/png"))
+    html = html.replace("__GARDEN_IMAGE__", data_uri(ASSETS / "kooizy-garden.png", "image/png"))
     video = ASSETS / "story.mp4"
     if video.exists():
         video_html = (

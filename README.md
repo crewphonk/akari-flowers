@@ -7,7 +7,7 @@ Projeto independente em Python e Streamlit, no repositório crewphonk/akari-flow
 
 - Apresentação da suculenta com arte original em pixel.
 - Três capítulos: o começo, o crescimento e um novo lar.
-- Plantinha, nuvens, brilhos e corações com animações em passos.
+- Kooizy estática no jardim em pixel art, com nuvens, estrelas e lua em movimento; ao receber carinho, corações saem da plantinha nas mãos dela.
 - Alternância de dia/noite e interação de carinho.
 - Controle para pausar movimentos e respeito à preferência por movimento reduzido.
 - Layout adaptado para desktop e celular.
