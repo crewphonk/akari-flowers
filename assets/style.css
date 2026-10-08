@@ -191,7 +191,10 @@
 
 @media(max-width:540px){.carousel-controls{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:8px}.carousel-dots{max-width:none;flex-wrap:nowrap;gap:2px}.carousel-dot{min-width:0;padding:4px;flex:1}}
 
-/* Solo portrait with the same final-scene dialogue and heart decorations. */
-.story-couple.story-solo{left:7%;bottom:5%;width:39%;height:86%}
-.story-solo .story-character{height:100%;object-position:center bottom}
-@media(max-width:850px){.story-couple.story-solo{left:auto;bottom:auto;width:64%;height:auto}.story-solo .story-character{height:auto}}
+/* Solo scenes use the same portrait sizing as chapters 1–3; hearts sit in a separate layer. */
+.story-heart-orbit{position:absolute;z-index:2;left:7%;bottom:5%;width:39%;height:86%;pointer-events:none}
+@media(max-width:850px){.with-hearts .story-character{position:relative;left:auto;bottom:auto;width:64%;height:auto;order:1;flex-shrink:0;margin-top:22px}.story-heart-orbit{left:50%;bottom:25px;width:calc((100% - 28px)*.64);height:auto;aspect-ratio:3/4;transform:translateX(-50%)}}
+
+@media(min-width:541px) and (max-width:850px){.with-hearts .story-character{width:calc((100% + 28px)*.39)}.story-heart-orbit{width:39%}}
+
+@media(min-width:721px) and (max-width:850px){.with-hearts .story-character{width:calc((100% + 28px)*.3628125)}.story-heart-orbit{width:36.28125%}}

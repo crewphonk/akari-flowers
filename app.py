@@ -53,8 +53,11 @@ def build_slides() -> str:
                         f'<span class="couple-heart couple-heart-{i}" aria-hidden="true"></span>'
                         for i in range(1, 9)
                     )
-                    solo_class = " story-solo" if not slide.get("couple") else ""
-                    character = f'<div class="story-couple{solo_class}">{character}{hearts}</div>'
+                    if slide.get("couple"):
+                        character = f'<div class="story-couple">{character}{hearts}</div>'
+                    else:
+                        garden_class += " with-hearts"
+                        character += f'<div class="story-heart-orbit" aria-hidden="true">{hearts}</div>'
                 content = (
                     f'<div class="story-garden{garden_class}">'
                     '<div class="sky-cloud story-cloud-one" aria-hidden="true"></div>'
