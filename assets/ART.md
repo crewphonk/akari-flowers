@@ -33,3 +33,9 @@ O desenho e a expressão sapeca foram preservados. As classes e animações do c
 ### Prompt final da edição
 
 Use case: background-extraction. Image 1 is the edit target supplied by the user: a pixel-art succulent in an orange terracotta pot, with a mischievous expressive face, narrowed eyes, raised eyebrows, pink cheeks and tongue out. Remove ONLY the solid black exterior background and replace it with genuine transparent alpha. Preserve the original succulent and pot exactly: all leaf shapes, placement, colors, pixel clusters, highlights, pixel edges, face expression, eyes, brows, cheeks, tongue, pot shape, soil, scale, composition, and framing. Do not redraw, redesign, simplify, smooth, crop, add anything, add shadows, or change the expression. Maintain sharp square pixel art. The goal is the same provided mischievous sprite as an isolated transparent PNG for a website.
+
+## Docinho surpresa — capítulo 03
+
+Arquivo final: assets/docinho-surpresa.png.
+Imagem fornecida pelo usuário e copiada sem alterações, preservando o fundo transparente original.
+As classes e animações do capítulo 03 permanecem as mesmas.
