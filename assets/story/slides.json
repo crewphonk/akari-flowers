@@ -10,5 +10,11 @@
     "image": "allan-02.png",
     "alt": "Personagem de boné, barba, camiseta preta e jeans, com as duas mãos abertas e expressão triste.",
     "dialogue": "Sinceramente... Dói muito ver a gente se desentender assim."
+  },
+  {
+    "type": "garden",
+    "image": "allan-03.png",
+    "alt": "Personagem de boné, barba, camiseta preta e jeans, com as mãos sobre o peito e corações ao redor.",
+    "dialogue": "Mas quando eu olho para dentro de mim... u vejo que o que sinto por você é gigante. Maior que qualquer orgulho ou briga."
   }
 ]

@@ -55,3 +55,9 @@ Use case: background-extraction. Image 1 is the edit target supplied by the user
 Arquivo final: assets/story/allan-02.png.
 Imagem fornecida pelo usuário e copiada sem alterações, preservando a pose e o fundo transparente original.
 A cena reutiliza assets/kooizy-garden.png e mantém a fala como texto HTML.
+
+## Terceira cena do carrossel — personagem do Allan
+
+Arquivo final: assets/story/allan-03.png.
+Imagem fornecida pelo usuário e copiada sem alterações, preservando a pose, os corações e o fundo transparente original.
+A cena reutiliza assets/kooizy-garden.png e mantém a fala como texto HTML.
