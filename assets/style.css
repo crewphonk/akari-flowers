@@ -1,0 +1,18 @@
+<style>
+.stApp { background: #fffafd; color: #272132; }
+.stMainBlockContainer { max-width: 1120px; padding: 2rem 1.5rem; }
+.akari-page { min-height: 78vh; display: flex; flex-direction: column; justify-content: space-between; font-family: Arial, sans-serif; }
+.akari-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0 2rem; border-bottom: 1px solid #e5dbe4; }
+.akari-brand { font-family: Georgia, serif; font-size: 1.5rem; color: #632650; }
+.akari-status { font-size: .875rem; color: #632650; border: 1px solid #dcc6d5; padding: .65rem 1rem; border-radius: 2rem; }
+.akari-hero { padding: 5rem 0; max-width: 850px; }
+.akari-eyebrow { color: #632650; font-size: .875rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1.5rem; }
+.akari-title { font-family: Georgia, serif; font-weight: 400; font-size: clamp(3.25rem, 8vw, 6.75rem); letter-spacing: -.04em; line-height: 1.08; margin: 0 0 1.75rem; color: #272132; }
+.akari-description { max-width: 34rem; font-size: 1.125rem; line-height: 1.7; color: #625568; margin: 0; }
+.akari-footer { border-top: 1px solid #e5dbe4; padding: 1.5rem 0; color: #625568; font-size: .875rem; }
+@media (max-width: 600px) {
+  .stMainBlockContainer { padding: 1.25rem; }
+  .akari-header { align-items: flex-start; flex-wrap: wrap; }
+  .akari-hero { padding: 4rem 0; }
+}
+</style>
