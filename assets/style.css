@@ -115,3 +115,12 @@
 @media(max-width:380px){.kooizy-nav nav{font-size:18px;gap:12px}.kooizy h1{font-size:29px}.scene-label{font-size:8px}.chapter{padding:16px}.kooizy h3{font-size:18px}.pixel-small{font-size:9px!important}.eyebrow{font-size:10px}.motion-toggle{font-size:9px!important}.video-empty .pixel-label{font-size:10px}}
 
 .kooizy-nav,.kooizy section{scroll-margin-top:80px}
+
+/* Hero character: animate the supplied sprite as one piece, keeping the plant in her hands. */
+.plant-touch.character-touch{width:230px;height:calc(100% - 84px);bottom:38px;left:58%;max-width:68%}
+.character-reaction{display:block;width:100%;height:100%;transform-origin:50% 100%}
+.plant-sprite.kooizy-character{animation:kooizy-idle 3.2s steps(6,end) infinite;object-position:center bottom}
+.character-reaction.is-loved{animation:kooizy-love .8s steps(8,end)}
+@keyframes kooizy-idle{0%,100%{transform:translate(0,0)}25%{transform:translate(2px,-3px)}50%{transform:translate(0,-6px)}75%{transform:translate(-2px,-3px)}}
+@keyframes kooizy-love{0%,100%{transform:translateY(0)}25%{transform:translateY(-12px)}50%{transform:translateY(0)}75%{transform:translateY(-6px)}}
+@media(prefers-reduced-motion:reduce){.plant-sprite.kooizy-character,.character-reaction.is-loved{animation:none!important}}

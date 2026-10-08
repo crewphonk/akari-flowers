@@ -5,6 +5,7 @@
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let paused = reducedMotion.matches;
   let affection = 0;
+  let reactionTimer;
   const motionButton = root.querySelector(".motion-toggle");
   const setPaused = () => {
     root.classList.toggle("is-paused", paused);
@@ -32,7 +33,16 @@
     ];
     root.querySelector(".love-status").textContent = messages[Math.min(affection - 1, messages.length - 1)];
     const container = root.querySelector(".heart-particles");
-    if (paused || reducedMotion.matches || container.childElementCount >= 15) return;
+    if (paused || reducedMotion.matches) return;
+    const character = root.querySelector(".character-reaction");
+    if (character) {
+      window.clearTimeout(reactionTimer);
+      character.classList.remove("is-loved");
+      void character.offsetWidth;
+      character.classList.add("is-loved");
+      reactionTimer = window.setTimeout(() => character.classList.remove("is-loved"), 850);
+    }
+    if (container.childElementCount >= 15) return;
     for (let i = 0; i < 3; i += 1) {
       const heart = document.createElement("span");
       heart.className = "love-particle";
