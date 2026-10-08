@@ -67,3 +67,9 @@ A cena reutiliza assets/kooizy-garden.png e mantém a fala como texto HTML.
 Arquivo final: assets/story/casal-04.png.
 Imagem fornecida pelo usuário e copiada sem alterações, preservando o casal, a plantinha e o fundo transparente original.
 A cena reutiliza assets/kooizy-garden.png. Oito corações em pixel art são desenhados e animados por CSS ao redor do casal, sem alterar a imagem.
+
+### Atualização do quarto quadro — Allan sozinho
+
+Arquivo ativo: assets/story/allan-04.png.
+Nova imagem fornecida pelo usuário, copiada sem alterações e com a transparência original preservada.
+Substitui o casal no quarto quadro. A fala completa e os oito corações animados em CSS são mantidos.

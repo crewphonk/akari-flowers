@@ -19,9 +19,9 @@
   },
   {
     "type": "garden",
-    "couple": true,
-    "image": "casal-04.png",
-    "alt": "Allan e Kooizy juntos em pixel art, ele de boné e ela segurando a Docinho, rodeados por corações.",
-    "dialogue": "É por isso que eu prefiro te pedir desculpas e não soltar sua mão, eu amo você e quero continuar pensando e vivendo o nós. Me deixa ser seu, quer namorar comigo, de novo?"
+    "image": "allan-04.png",
+    "alt": "Allan sozinho em pixel art, de boné, barba, camiseta preta e jeans, com as mãos nos bolsos e corações ao redor.",
+    "dialogue": "É por isso que eu prefiro te pedir desculpas e não soltar sua mão, eu amo você e quero continuar pensando e vivendo o nós. Me deixa ser seu, quer namorar comigo, de novo?",
+    "hearts": true
   }
 ]

@@ -190,3 +190,8 @@
 @media(max-width:360px){.with-couple .story-dialogue{font-size:22px;padding:11px 12px}}
 
 @media(max-width:540px){.carousel-controls{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:8px}.carousel-dots{max-width:none;flex-wrap:nowrap;gap:2px}.carousel-dot{min-width:0;padding:4px;flex:1}}
+
+/* Solo portrait with the same final-scene dialogue and heart decorations. */
+.story-couple.story-solo{left:7%;bottom:5%;width:39%;height:86%}
+.story-solo .story-character{height:100%;object-position:center bottom}
+@media(max-width:850px){.story-couple.story-solo{left:auto;bottom:auto;width:64%;height:auto}.story-solo .story-character{height:auto}}
