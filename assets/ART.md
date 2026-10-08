@@ -23,3 +23,13 @@ A personagem fornecida pelo usuário está em assets/kooizy-character.png e perm
 ### Prompt final do cenário
 
 Use case: stylized-concept. Asset type: wide transparent terrain layer for a cozy 16-bit pixel art website scene. Primary request: improve the surroundings behind a chibi girl holding a small succulent. Generate ONLY a garden landscape, NO character, NO plant pot, NO sky, NO clouds, NO sun, NO moon, NO stars, NO text. A wide side-view cozy garden terrain strip: low rolling mint-green grassy hills in the distance, a low rustic wooden fence near the far right, small leafy bushes around the two side edges, a few tiny white and pale pink pixel flowers, and a small warm stone path near the lower middle where the character can stand. Keep the middle open and uncluttered. Terrain occupies the lower two-thirds of the canvas; the upper third above irregular stepped hill silhouette is genuinely transparent alpha. Classic 16-bit cozy RPG pixel art, crisp large square pixels and stair-stepped contours, readable at 500 pixels wide. Limited palette of jade, sage green, pale cream, pink blossom accents, muted brown fence, moss, warm stone. Pixel clusters only, no anti-aliasing, no smooth vector edges, no blurry gradients, no photorealism, no interface elements. Wide landscape composition, around 3:2 ratio. This will be a static scenery layer over a separately animated day/night sky.
+
+## Docinho sapeca — capítulo 01
+
+Arquivo final: assets/docinho-sapeca.png.
+Imagem fornecida pelo usuário, com remoção do fundo preto por image_gen no modo built-in.
+O desenho e a expressão sapeca foram preservados. As classes e animações do capítulo 01 permanecem as mesmas.
+
+### Prompt final da edição
+
+Use case: background-extraction. Image 1 is the edit target supplied by the user: a pixel-art succulent in an orange terracotta pot, with a mischievous expressive face, narrowed eyes, raised eyebrows, pink cheeks and tongue out. Remove ONLY the solid black exterior background and replace it with genuine transparent alpha. Preserve the original succulent and pot exactly: all leaf shapes, placement, colors, pixel clusters, highlights, pixel edges, face expression, eyes, brows, cheeks, tongue, pot shape, soil, scale, composition, and framing. Do not redraw, redesign, simplify, smooth, crop, add anything, add shadows, or change the expression. Maintain sharp square pixel art. The goal is the same provided mischievous sprite as an isolated transparent PNG for a website.
