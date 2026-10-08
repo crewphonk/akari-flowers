@@ -11,7 +11,7 @@ Projeto independente em Python e Streamlit, no repositório crewphonk/akari-flow
 - Alternância de dia/noite e interação de carinho.
 - Controle para pausar movimentos e respeito à preferência por movimento reduzido.
 - Layout adaptado para desktop e celular.
-- Espaço para vídeo na parte inferior.
+- Carrossel de imagens na parte inferior, com setas, indicadores, teclado e gesto de deslizar no celular.
 
 O texto é uma narrativa criativa da primeira versão e pode ser ajustado junto com a identidade da marca.
 
@@ -24,11 +24,21 @@ Recomendado: Python 3.12.
     python -m pip install -r requirements.txt
     python -m streamlit run app.py
 
-## Vídeo
+## História em imagens
 
-A página mostra um espaço "Vídeo em breve" enquanto não há vídeo.
-Para inserir o filme, adicione assets/story.mp4 ao repositório.
-O app substitui automaticamente o espaço por um player com controles, sem reprodução automática.
+As imagens do carrossel ficam em assets/story/.
+A ordem e os textos são definidos em assets/story/slides.json:
+
+```json
+[
+  {"image": "01.png", "alt": "Descrição da primeira cena", "caption": "Legenda da primeira cena."},
+  {"image": "02.png", "alt": "Descrição da segunda cena", "caption": "Legenda da segunda cena."}
+]
+```
+
+Formatos aceitos: PNG, JPEG, WebP e GIF. As imagens aparecem inteiras, sem cortes.
+Enquanto a lista está vazia, o carrossel mostra três espaços de preparação.
+A navegação é manual e circular, sem avanço automático, para permitir a leitura da história.
 
 ## Publicar no Streamlit
 
@@ -45,8 +55,9 @@ A URL final deve ser confirmada no painel do Streamlit.
 - app.py: montagem da página e incorporação das imagens e fontes locais.
 - assets/landing.html: conteúdo e estrutura.
 - assets/style.css: visual em pixel e animações.
-- assets/animation.js: dia/noite, carinho, pausa e progresso dos capítulos.
+- assets/animation.js: dia/noite, carinho, pausa, progresso dos capítulos e navegação do carrossel.
 - assets/kooizy-succulent.png: suculenta original com fundo transparente.
+- assets/story/slides.json: imagens, ordem, descrições e legendas do carrossel.
 - assets/ART.md: origem da arte e prompt final.
 - assets/fonts/: fontes Silkscreen e VT323, com licenças OFL.
 - .streamlit/config.toml: configuração visual do Streamlit.

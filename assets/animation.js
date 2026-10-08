@@ -69,6 +69,51 @@
     });
   });
 
+  const carousel = root.querySelector(".story-carousel");
+  const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
+  const dotsContainer = carousel.querySelector(".carousel-dots");
+  let activeSlide = 0;
+  const dots = slides.map((slide, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "carousel-dot";
+    dot.setAttribute("aria-label", "Ir para imagem " + (index + 1));
+    dot.addEventListener("click", () => showSlide(index));
+    dotsContainer.appendChild(dot);
+    return dot;
+  });
+  const showSlide = index => {
+    activeSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => { slide.hidden = i !== activeSlide; });
+    dots.forEach((dot, i) => dot.setAttribute("aria-current", String(i === activeSlide)));
+    carousel.querySelector(".carousel-count").textContent =
+      String(activeSlide + 1).padStart(2, "0") + " / " + String(slides.length).padStart(2, "0");
+  };
+  carousel.querySelector(".carousel-prev").addEventListener("click", () => showSlide(activeSlide - 1));
+  carousel.querySelector(".carousel-next").addEventListener("click", () => showSlide(activeSlide + 1));
+  carousel.querySelectorAll(".carousel-prev,.carousel-next").forEach(button => { button.disabled = slides.length < 2; });
+  carousel.addEventListener("keydown", event => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    showSlide(activeSlide + (event.key === "ArrowRight" ? 1 : -1));
+  });
+  let touchStart = null;
+  const carouselArt = carousel.querySelector(".carousel-slides");
+  carouselArt.addEventListener("touchstart", event => {
+    const touch = event.touches[0];
+    touchStart = event.touches.length === 1 ? {x: touch.clientX, y: touch.clientY} : null;
+  }, {passive: true});
+  carouselArt.addEventListener("touchend", event => {
+    if (!touchStart) return;
+    const touch = event.changedTouches[0];
+    const dx = touch.clientX - touchStart.x;
+    const dy = touch.clientY - touchStart.y;
+    touchStart = null;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) showSlide(activeSlide + (dx < 0 ? 1 : -1));
+  }, {passive: true});
+  carouselArt.addEventListener("touchcancel", () => { touchStart = null; }, {passive: true});
+  showSlide(0);
+
   if (window.__kooizyStoryObserver) window.__kooizyStoryObserver.disconnect();
   const segments = Array.from(root.querySelectorAll(".progress-track i"));
   const setChapter = chapter => {

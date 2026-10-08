@@ -3,7 +3,7 @@
     <a class="brand" href="#kooizy-top" aria-label="Kooizy, início">kooizy<span class="brand-star" aria-hidden="true">✦</span></a>
     <nav aria-label="Navegação principal">
       <a href="#kooizy-story">Minha história</a>
-      <a href="#kooizy-video">O filme</a>
+      <a href="#kooizy-carousel">Em imagens</a>
     </nav>
     <button class="motion-toggle" type="button" aria-pressed="false">Pausar movimentos</button>
   </header>
@@ -96,16 +96,21 @@
     <div class="story-progress" aria-label="Capítulo atual da história"><span class="progress-label">NOSSA HISTÓRIA</span><span class="progress-track"><i></i><i></i><i></i></span><span class="progress-count">01 / 03</span></div>
   </section>
 
-  <section class="video-section" id="kooizy-video" aria-labelledby="video-title">
+  <section class="carousel-section" id="kooizy-carousel" aria-labelledby="carousel-title">
     <p class="eyebrow">A história continua</p>
-    <h2 id="video-title">Agora, aperte<br>o sentimento.</h2>
-    <p class="video-intro">Cada folhinha tem uma história para contar.</p>
-    <div class="video-frame">
-      <div class="video-topbar"><span>KOOIZY_FILME</span><span aria-hidden="true">■ ■ ■</span></div>
-      __VIDEO_CONTENT__
-      <div class="video-bottom"><span>UMA PEQUENA GRANDE HISTÓRIA</span><span aria-hidden="true">♥</span></div>
+    <h2 id="carousel-title">Agora, aperte<br>o sentimento.</h2>
+    <p class="carousel-intro">Use as setas para seguir a história.</p>
+    <div class="story-carousel" role="region" aria-roledescription="carrossel" aria-label="Nossa história em imagens" tabindex="0">
+      <div class="carousel-topbar"><span>KOOIZY_HISTÓRIA</span><span aria-hidden="true">♥ ✦ ♥</span></div>
+      <div class="carousel-slides">__CAROUSEL_SLIDES__</div>
+      <div class="carousel-controls">
+        <button class="carousel-prev pixel-small" type="button" aria-label="Imagem anterior"><span aria-hidden="true">←</span></button>
+        <div class="carousel-dots" role="group" aria-label="Escolher imagem"></div>
+        <button class="carousel-next pixel-small" type="button" aria-label="Próxima imagem"><span aria-hidden="true">→</span></button>
+      </div>
+      <div class="carousel-bottom"><span>UMA PEQUENA GRANDE HISTÓRIA</span><span class="carousel-count" role="status" aria-live="polite" aria-atomic="true"></span></div>
     </div>
-    <p class="video-note">Nosso filme chega em breve. Enquanto isso, eu fico aqui crescendo.</p>
+    <p class="carousel-note">Uma imagem de cada vez. Um sentimento em cada página.</p>
   </section>
 
   <footer class="kooizy-footer"><a class="brand" href="#kooizy-top">kooizy<span class="brand-star" aria-hidden="true">✦</span></a><p>Pequenas plantas. Histórias que ficam.</p><span class="footer-credit">Akari Flower's</span></footer>

@@ -17,5 +17,6 @@ Do not report successful deployment unless the live app has been confirmed.
 
 Keep images and fonts inside assets/.
 The existing pixel sprite is assets/kooizy-succulent.png.
-The video area is replaced by a player when assets/story.mp4 exists.
+The image carousel uses assets/story/slides.json for image order, alt text, and captions.
+Keep story images inside assets/story/ and preserve their full framing.
 Preserve the font licenses.

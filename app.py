@@ -1,4 +1,7 @@
 from base64 import b64encode
+from html import escape
+import json
+import mimetypes
 from pathlib import Path
 
 import streamlit as st
@@ -11,6 +14,45 @@ def data_uri(path: Path, media_type: str) -> str:
     return f"data:{media_type};base64,{b64encode(path.read_bytes()).decode('ascii')}"
 
 
+def build_slides() -> str:
+    story = ASSETS / "story"
+    slides = json.loads((story / "slides.json").read_text(encoding="utf-8"))
+    if not slides:
+        slides = [{"placeholder": True} for _ in range(3)]
+    rendered = []
+    for index, slide in enumerate(slides):
+        number = str(index + 1).zfill(2)
+        hidden = " hidden" if index else ""
+        if slide.get("placeholder"):
+            content = (
+                '<div class="carousel-placeholder">'
+                '<span class="carousel-symbol" aria-hidden="true">[ ♥ ]</span>'
+                f'<span class="pixel-label">Imagem {number}</span>'
+                '<p>As imagens da nossa história chegam em breve.</p></div>'
+            )
+            caption = "Uma nova página da nossa história."
+        else:
+            image_path = (story / slide["image"]).resolve()
+            if not image_path.is_relative_to(story.resolve()):
+                raise ValueError("Story images must be inside assets/story.")
+            media_type = mimetypes.guess_type(image_path.name)[0]
+            if media_type not in {"image/png", "image/jpeg", "image/webp", "image/gif"}:
+                raise ValueError("Unsupported story image format.")
+            alt = escape(slide.get("alt", f"Imagem {number} da história"), quote=True)
+            content = (
+                f'<img class="carousel-image" src="{data_uri(image_path, media_type)}" '
+                f'alt="{alt}" loading="lazy">'
+            )
+            caption = slide.get("caption", "")
+        rendered.append(
+            f'<figure class="carousel-slide" role="group" aria-roledescription="imagem" '
+            f'aria-label="{index + 1} de {len(slides)}"{hidden}>'
+            f'<div class="carousel-art">{content}</div>'
+            f'<figcaption>{escape(caption)}</figcaption></figure>'
+        )
+    return "".join(rendered)
+
+
 def build_page() -> str:
     css = (ASSETS / "style.css").read_text(encoding="utf-8")
     css = css.replace("__HEADING_FONT__", data_uri(ASSETS / "fonts" / "Silkscreen-Regular.ttf", "font/ttf"))
@@ -21,23 +63,7 @@ def build_page() -> str:
     html = html.replace("__GARDEN_IMAGE__", data_uri(ASSETS / "kooizy-garden.png", "image/png"))
     html = html.replace("__CHAPTER_ONE_PLANT__", data_uri(ASSETS / "docinho-sapeca.png", "image/png"))
     html = html.replace("__CHAPTER_THREE_PLANT__", data_uri(ASSETS / "docinho-surpresa.png", "image/png"))
-    video = ASSETS / "story.mp4"
-    if video.exists():
-        video_html = (
-            '<video class="story-video" controls playsinline preload="metadata" '
-            'aria-label="A história da suculenta da Kooizy">'
-            f'<source src="{data_uri(video, "video/mp4")}" type="video/mp4">'
-            'Seu navegador não suporta vídeo HTML5.</video>'
-        )
-    else:
-        video_html = """
-        <div class="video-empty">
-          <span class="video-film" aria-hidden="true">[ &gt; ]</span>
-          <span class="pixel-label">Vídeo em breve</span>
-          <p>Um novo jeito de conhecer a minha história.</p>
-        </div>
-        """
-    html = html.replace("__VIDEO_CONTENT__", video_html)
+    html = html.replace("__CAROUSEL_SLIDES__", build_slides())
     js = (ASSETS / "animation.js").read_text(encoding="utf-8")
     return f"<style>{css}</style>{html}<script>{js}</script>"
 
