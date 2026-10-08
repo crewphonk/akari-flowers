@@ -22,7 +22,7 @@ Recomendado: Python 3.12.
 5. Em Advanced settings, selecione Python 3.12.
 6. Clique em Deploy e aguarde a URL confirmada pelo Streamlit.
 
-O repositório é privado. O acesso da integração Streamlit ao repositório pode precisar ser habilitado na conta GitHub.
+O repositório é público. Conecte a conta GitHub crewphonk ao Streamlit Community Cloud para publicar e administrar o aplicativo.
 
 ## Estrutura
 
