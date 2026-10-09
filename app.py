@@ -94,6 +94,7 @@ def build_page() -> str:
     html = html.replace("__GARDEN_IMAGE__", data_uri(ASSETS / "kooizy-garden.png", "image/png"))
     html = html.replace("__CHAPTER_ONE_PLANT__", data_uri(ASSETS / "docinho-sapeca.png", "image/png"))
     html = html.replace("__CHAPTER_THREE_PLANT__", data_uri(ASSETS / "docinho-surpresa.png", "image/png"))
+    html = html.replace("__CURIOSITY_PLANT__", data_uri(ASSETS / "docinho-curiosidade.png", "image/png"))
     html = html.replace("__CAROUSEL_SLIDES__", build_slides())
     js = (ASSETS / "animation.js").read_text(encoding="utf-8")
     return f"<style>{css}</style>{html}<script>{js}</script>"
