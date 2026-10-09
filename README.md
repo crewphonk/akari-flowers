@@ -3,6 +3,8 @@
 Landing page em pixel art que conta a história de uma suculenta da Kooizy.
 Projeto independente em Python e Streamlit, no repositório crewphonk/akari-flowers.
 
+App público: [kooizy.streamlit.app](https://kooizy.streamlit.app/).
+
 ## A página
 
 - Apresentação da suculenta com arte original em pixel.
@@ -58,7 +60,8 @@ A navegação é manual e circular, sem avanço automático, para permitir a lei
 4. Selecione Python 3.12 em Advanced settings e clique em Deploy.
 
 O repositório é público. Após conectar o app, os pushes na branch main atualizam a versão publicada.
-A URL final deve ser confirmada no painel do Streamlit.
+O app público está em https://kooizy.streamlit.app/, conectado à branch main e ao arquivo app.py.
+Após cada push, conferir a página publicada e suas interações.
 
 ## Arquivos
 

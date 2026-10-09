@@ -10,7 +10,8 @@ crewphonk/akari-flowers. The deployment branch is main and the Streamlit entrypo
 The user explicitly requested this workflow on 2026-10-08.
 
 Keep the app compatible with Streamlit Community Cloud.
-After pushing, verify the connected Streamlit app when its URL is available.
+After pushing, verify the public Streamlit app at https://kooizy.streamlit.app/.
+The live URL and public access were confirmed on 2026-10-08.
 Do not report successful deployment unless the live app has been confirmed.
 
 ## Assets
